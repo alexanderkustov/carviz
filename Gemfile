@@ -12,6 +12,8 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'figaro'
 gem 'libv8'
+gem 'omniauth'
+gem 'omniauth-facebook'
 group :assets do
   gem 'therubyracer', :platform=>:ruby, :require=>"v8"
 end
