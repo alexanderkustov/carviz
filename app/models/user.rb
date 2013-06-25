@@ -8,6 +8,19 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :uid, :provider, :email, :password, :password_confirmation, :remember_me
   
+  attr_accessible :profile_attributes
+  
+  has_one :profile
+  accepts_nested_attributes_for :profile
+
+  after_create :create_user_profile
+
+  def create_user_profile
+    create_profile!
+  end
+
+
+
    def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]

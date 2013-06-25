@@ -112,21 +112,24 @@
                 <!-- about us -->
                 <div class="about-us_2">
                     <h3>Sobre Nós</h3>
- <% @users.each do |user| %>
-						  <p>User: <%=link_to user.name, user %></p>
-						  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-						<% end %>
                     <h5>CARVIZ é um clube de partilha de automóveis, motos, barcos e bicicletas que funciona com base na confiança e proximidade entre proprietário e utilizador</h5>
                     <p>Gostava de usar o jeep, a autocaravana ou o Smart do seu vizinho? De levar um Mercedes ao casamento da sua sobrinha? Como não tem nenhum destes veículos, a solução é pedi-los emprestados, mas é provável que receie uma resposta negativa.
                         <br/>
                         Gostava de fazer algum dinheiro com o veículo que acaba de comprar e afinal quase não usa? Vai viajar para o estrangeiro e o carro fica parado à sua porta? Como disponibilizá-lo a alguém da sua confiança que, ainda por cima, mora na porta ao lado?
                     </p>
+                     <% @users.each do |user| %>
+                          <p>User: <%=link_to user.name, user %></p>
+                          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+                        <% end %>
+                        <%= render 'layouts/navigation' %>
+                        <%= render 'layouts/messages' %>
                 </div>
             </div>
         </div> <!-- end row -->
 
-        <div class="row">
-            <!-- as seen on -->
+        
+            <!-- as seen on 
+            <div class="row">
             <div class="span12 using-this">
                 <h3>Como Visto Em...</h3>
                 <div class="using-this-container">
@@ -152,7 +155,7 @@
                     <h3>Testemunhos</h3>
                     <p>"Excepcional, não sabia que poderia ganhar tanto dinheiro em simplesmente emprestar o meu carro. "</p>
                     <div class="test-author">
-                        <img src="assets/img/clients/google.png" height="77" width="77">
+                        <img src="<%= asset_path 'clients/google.png' %>" height="77" width="77">
                         <p><span>Eduardo Filho</span><br>Inspiring</p>
                     </div>
                 </div>
