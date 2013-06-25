@@ -18,7 +18,7 @@ a:hover { text-decoration: none; }
     width: 166px;
     height: 33px;
     margin-top: 10px;
-    background: url(../img/logo.png) left top no-repeat;
+    background: url(../../img/logo.png) left top no-repeat;
     color: #555;
     text-indent: -9999px;
     text-decoration: none;
@@ -321,8 +321,8 @@ a:hover { text-decoration: none; }
     width: 100px;
     height: 100px;
     z-index: 100;
-    background: #518d8a url(../img/pattern-2.png); /* browsers that don't support rgba */
-    background: rgba(81,141,138,.8) url(../img/pattern-2.png);
+    background: #518d8a url(../images/pattern-2.png); /* browsers that don't support rgba */
+    background: rgba(81,141,138,.8) url(../images/pattern-2.png);
     text-align: center;
 }
 
@@ -382,13 +382,13 @@ a:hover { text-decoration: none; }
     -ms-transition: all .2s;
 }
 
-.using-this-container a.using-this-google { background-image: url(../img/clients/google.png); }
-.using-this-container a.using-this-youtube { background-image: url(../img/clients/youtube.png); }
-.using-this-container a.using-this-pinterest { background-image: url(../img/clients/pinterest.png); }
+.using-this-container a.using-this-google { background-image: url(../../images/clients/google.png); }
+.using-this-container a.using-this-youtube { background-image: url(../images/clients/youtube.png); }
+.using-this-container a.using-this-pinterest { background-image: url(../images/clients/pinterest.png); }
 
-.using-this-container a.using-this-google:hover { background-image: url(../img/clients/google-hover.png); }
-.using-this-container a.using-this-youtube:hover { background-image: url(../img/clients/youtube-hover.png); }
-.using-this-container a.using-this-pinterest:hover { background-image: url(../img/clients/pinterest-hover.png); }
+.using-this-container a.using-this-google:hover { background-image: url(../images/clients/google-hover.png); }
+.using-this-container a.using-this-youtube:hover { background-image: url(../images/clients/youtube-hover.png); }
+.using-this-container a.using-this-pinterest:hover { background-image: url(../images/clients/pinterest-hover.png); }
 
 
 
@@ -397,7 +397,7 @@ a:hover { text-decoration: none; }
 footer {
     margin-top: 60px;
     padding: 30px 0;
-    background: #2d2d2d url(../img/pattern-3.jpg);
+    background: #2d2d2d url(../../images/pattern-3.jpg);
     -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3) inset;
     -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3) inset;
     box-shadow: 0 1px 5px 0 rgba(0,0,0,.3) inset;
