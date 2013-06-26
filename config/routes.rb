@@ -1,5 +1,8 @@
 Carvizy::Application.routes.draw do
   
+  resources :cars
+
+
   resources :profiles
 
 

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  marca: MyString
+  ano: 1
+  modelo: MyString
+  variacao: MyString
+  cor: MyString
+  kilometragem: 
+
+two:
+  marca: MyString
+  ano: 1
+  modelo: MyString
+  variacao: MyString
+  cor: MyString
+  kilometragem: 
