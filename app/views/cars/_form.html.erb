@@ -1,41 +1,50 @@
-<%= form_for [@user, @car] do |f| %>
-  <% if @car.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+             <%= form_for [@user, @car] do |f| %>
+              <% if @car.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+                <ul>
+                  <% @car.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+              <% end %>
 
-      <ul>
-      <% @car.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+            <div class="span3 offset2">
+              <div class="logowrapper">
+                <img class="logoicon" src="http://placehold.it/300x300/bbb/&text=Car+Image" alt="App Logo"/>
+              </div>
+            </div>
 
-  <div class="field">
-    <%= f.label :marca %><br />
-    <%= f.text_field :marca %>
-  </div>
-  <div class="field">
-    <%= f.label :ano %><br />
-    <%= f.number_field :ano %>
-  </div>
-  <div class="field">
-    <%= f.label :modelo %><br />
-    <%= f.text_field :modelo %>
-  </div>
-  <div class="field">
-    <%= f.label :variacao %><br />
-    <%= f.text_field :variacao %>
-  </div>
-  <div class="field">
-    <%= f.label :cor %><br />
-    <%= f.text_field :cor %>
-  </div>
-  <div class="field">
-    <%= f.label :kilometragem %><br />
-    <%= f.text_field :kilometragem %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+            <div class="span6">
+              <form class="form-horizontal">
+                <p class="help-block">Marca</p>
+                <div class="input-prepend">
+                  <%= f.text_field :marca, :size => "16" %>
+                </div>
+                <p class="help-block">Modelo</p>
+                <div class="input-prepend">
+                  <%= f.text_field :modelo, :size => "16" %>
+                </div>
+                <div class="field">
+                  <%= f.label :variacao %>
+                  <%= f.text_field :variacao %>
+               
+                  <%= f.label :cor %>
+                  <%= f.text_field :cor %>
+               
+                  <%= f.label :ano %>
+                  <%= f.number_field :ano %>
+               
+                  <%= f.label :kilometragem %>
+                  <%= f.text_field :kilometragem %>
+                </div>
+                <hr>
+                <div class="help-block">
+                  <%= f.submit %>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <% end %>
