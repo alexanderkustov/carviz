@@ -25,11 +25,12 @@ class CarsController < ApplicationController
   # GET /cars/new.json
   def new
     @car = Car.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @car }
     end
+
   end
 
   # GET /cars/1/edit
@@ -40,8 +41,8 @@ class CarsController < ApplicationController
   # POST /cars
   # POST /cars.json
   def create
-    @car = Car.new(params[:car])
-
+    @car = current_user.cars.build(params[:car])
+    
     respond_to do |format|
       if @car.save
         format.html { redirect_to @car, notice: 'Car was successfully created.' }

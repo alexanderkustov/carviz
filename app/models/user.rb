@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+  class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -10,18 +10,20 @@ class User < ActiveRecord::Base
   
   attr_accessible :profile_attributes
   
-  has_one :profile
-  accepts_nested_attributes_for :profile
+  has_one :profile, :dependent => :destroy
+  has_many :cars, :dependent => :destroy
 
+  accepts_nested_attributes_for :profile, :cars
+
+  #criacao do perfil automatico, logo apos criacao do user
   after_create :create_user_profile
 
   def create_user_profile
     create_profile!
   end
 
-
-
-   def self.new_with_session(params, session)
+  #coisas para o facebook poder fazer login
+  def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
@@ -42,5 +44,4 @@ class User < ActiveRecord::Base
   user
 
 end
-
 end
