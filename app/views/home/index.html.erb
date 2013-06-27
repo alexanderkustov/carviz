@@ -6,7 +6,9 @@
                          <%= image_tag "carro2.png" %>
                      </div>
                      <div class="span1 offset6 product-background" style="text-align:center;">
-                         <a href="<%= users_path %>" style="color:white">LOGIN</a></div>
+                         <a href="<%= users_path %>" style="color:white">LOGIN</a>
+                                               <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+</div>
                  </div>
                  <div class="row">
                     <div class="span1 product-image">
@@ -119,7 +121,6 @@
                     </p>
                      <% @users.each do |user| %>
                           <p>User: <%=link_to user.name, user %></p>
-                          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
                         <% end %>
                        
                         <%= render 'layouts/messages' %>

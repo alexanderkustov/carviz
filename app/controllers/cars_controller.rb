@@ -2,6 +2,7 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
+    #este index sera o geral para todos os carros, ou temos que ter um user cars...
     @cars = Car.all
 
     respond_to do |format|
