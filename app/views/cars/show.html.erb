@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
+<p>
+Proprietario:
+<%= @car.user.name %>
+</p>
 
 <p>
   <b>Marca:</b>
   <%= @car.marca %>
-</p>
-
-<p>
-  <b>Ano:</b>
-  <%= @car.ano %>
 </p>
 
 <p>
@@ -18,6 +17,11 @@
 <p>
   <b>Variacao:</b>
   <%= @car.variacao %>
+</p>
+
+<p>
+  <b>Ano:</b>
+  <%= @car.ano %>
 </p>
 
 <p>

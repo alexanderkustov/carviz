@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>proprietario</th>
     <th>Marca</th>
     <th>Ano</th>
     <th>Modelo</th>
@@ -15,6 +16,7 @@
 
 <% @cars.each do |car| %>
   <tr>
+    <td><%= car.user.name %></td>
     <td><%= car.marca %></td>
     <td><%= car.ano %></td>
     <td><%= car.modelo %></td>

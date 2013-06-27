@@ -13,7 +13,7 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
-    @car = Car.find(params[:user_id])
+    @car = Car.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
