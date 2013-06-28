@@ -1,21 +1,21 @@
              <%= form_for [@user, @car] do |f| %>
-              <% if @car.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
-                <ul>
-                  <% @car.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-                  <% end %>
-                </ul>
-              </div>
-              <% end %>
+             <% if @car.errors.any? %>
+             <div id="error_explanation">
+              <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+              <ul>
+                <% @car.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
 
             <div class="span3 offset2">
               <div class="logowrapper">
                 <img class="logoicon" src="http://placehold.it/300x300/bbb/&text=Car+Image" alt="App Logo"/>
               </div>
             </div>
-
+            
             <div class="span6">
               <form class="form-horizontal">
                 <p class="help-block">Marca</p>
@@ -29,13 +29,13 @@
                 <div class="field">
                   <%= f.label :variacao %>
                   <%= f.text_field :variacao %>
-               
+
                   <%= f.label :cor %>
                   <%= f.text_field :cor %>
-               
+
                   <%= f.label :ano %>
                   <%= f.number_field :ano %>
-               
+
                   <%= f.label :kilometragem %>
                   <%= f.text_field :kilometragem %>
                 </div>
