@@ -1,3 +1,22 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
+<div class="row">
+<div class="span12">
+
+<h3><%= @user.name %></h3>
 <p>Email: <%= @user.email if @user.email %></p>
+
+<%= render :file => 'profiles/show' %>
+
+<% @user.cars.each do |c| %>
+
+<div class="span4 well">
+    <h6><%= c.marca %></h6>
+    <h6><%= c.modelo %></h6>
+    <h6><%= c.variacao %></h6>
+    <h6><%= c.ano %></h6>
+    <h6><%= c.kilometragem %></h6>
+</div>
+
+<% end %>
+
+</div>
+</div>
