@@ -27,6 +27,20 @@
     <%= f.label :local %><br />
     <%= f.text_field :local %>
   </div>
+   <%= f.label :avatar %><br />
+    <% if f.object.avatar_url %>
+     <%= image_tag f.object.avatar_url.to_s if f.object.image? %>
+    <% else %>
+
+      <%= f.file_field :avatar %>
+  
+      <%= f.label :remote_avatar_url, "or image URL" %>
+      <%= f.text_field :remote_avatar_url %>
+  
+    <% end %>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

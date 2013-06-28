@@ -6,6 +6,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem "rmagick"
+  gem "mini_magick"
+  gem "carrierwave"
 end
 gem 'jquery-rails'
 gem 'devise'
@@ -21,4 +24,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
   gem 'quiet_assets'
+  gem 'rails_best_practices'
+  gem 'thin'
 end
