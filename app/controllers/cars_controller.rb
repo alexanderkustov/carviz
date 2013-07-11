@@ -3,7 +3,7 @@ class CarsController < ApplicationController
   # GET /cars.json
   def index
     #este index sera o geral para todos os carros, ou temos que ter um user cars...
-    @cars = Car.all
+    @cars = User.find(params[:user_id]).cars
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class CarsController < ApplicationController
   # GET /cars/1.json
   def show
     @car = Car.find(params[:id])
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @car }
@@ -43,7 +43,6 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = current_user.cars.build(params[:car])
-    
     respond_to do |format|
       if @car.save
         format.html { redirect_to [@car.user, @car], notice: 'Car was successfully created.' }

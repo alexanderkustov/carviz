@@ -1,22 +1,23 @@
 <div class="row">
-<div class="span12">
+<div class="span3">
 
 <h3><%= @user.name %></h3>
 <p>Email: <%= @user.email if @user.email %></p>
 
 <%= render :file => 'profiles/show' %>
 
-<% @user.cars.each do |c| %>
+</div>
 
-<div class="span4 well">
+
+<div class="span8 offset1">
+	<% @user.cars.each do |c| %>
     <h6><%= c.marca %></h6>
     <h6><%= c.modelo %></h6>
     <h6><%= c.variacao %></h6>
     <h6><%= c.ano %></h6>
     <h6><%= c.kilometragem %></h6>
+    <% end %>
 </div>
-
-<% end %>
 
 </div>
 </div>
