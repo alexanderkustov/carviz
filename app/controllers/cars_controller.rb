@@ -11,6 +11,15 @@ class CarsController < ApplicationController
     end
   end
 
+  def all_cars
+    @cars = Car.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @cars }
+    end
+  end
+
   # GET /cars/1
   # GET /cars/1.json
   def show

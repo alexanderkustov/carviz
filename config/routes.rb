@@ -9,6 +9,7 @@ Carvizy::Application.routes.draw do
   resources :users do
   	resources :cars
   end
+  match "/all_cars", :to => "cars#all_cars"
 
   resources :profiles
 

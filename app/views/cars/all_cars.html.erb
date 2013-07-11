@@ -1,0 +1,26 @@
+<h1>Listing all cars</h1>
+
+<table>
+  <tr>
+    <th>proprietario</th>
+    <th>Marca</th>
+    <th>Ano</th>
+    <th>Modelo</th>
+    <th>Variacao</th>
+    <th>Cor</th>
+    <th>Kilometragem</th>
+    <th></th>
+</tr>
+<% @cars.each do |car| %>
+<tr>
+    <td><%= car.user.name %></td>
+    <td><%= car.marca %></td>
+    <td><%= car.ano %></td>
+    <td><%= car.modelo %></td>
+    <td><%= car.variacao %></td>
+    <td><%= car.cor %></td>
+    <td><%= car.kilometragem %></td>
+    <td><%= link_to 'Show', user_car_path(car, car.user) %></td>
+</tr>
+<% end %>
+</table>
