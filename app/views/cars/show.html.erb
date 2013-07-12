@@ -1,4 +1,9 @@
+<div class="span8">
+
 <p id="notice"><%= notice %></p>
+
+<img src="<%= @car.carphoto %>" />
+
 <p>
 Proprietario:
 <%= @car.user.name %>
@@ -37,3 +42,4 @@ Proprietario:
 
 <%= link_to 'Edit', edit_user_car_path(@car.user, @car) %> |
 <%= link_to 'Back', user_cars_path %>
+</div>

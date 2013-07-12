@@ -1,4 +1,4 @@
-             <%= form_for [@user, @car] do |f| %>
+             <%= form_for [@user, @car], :html =>{:multipart => true} do |f| %>
              <% if @car.errors.any? %>
              <div id="error_explanation">
               <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
@@ -13,6 +13,7 @@
             <div class="span3 offset2">
               <div class="logowrapper">
                 <img class="logoicon" src="http://placehold.it/300x300/bbb/&text=Car+Image" alt="App Logo"/>
+                <%= f.file_field :carphoto %>
               </div>
             </div>
             <div class="span6">

@@ -23,9 +23,9 @@
     <td><%= car.variacao %></td>
     <td><%= car.cor %></td>
     <td><%= car.kilometragem %></td>
-    <td><%= link_to 'Show', user_car_path(car, car.user) %></td>
-    <td><%= link_to 'Edit', edit_user_car_path(car, car.user)%></td>
-    <td><%= link_to 'Destroy', user_car_path(car, car.user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', user_car_path(car.user, car) %> -
+    <%= link_to 'Edit', edit_user_car_path(car.user, car)%>
+     - <%= link_to 'Destroy', user_car_path(car.user, car), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

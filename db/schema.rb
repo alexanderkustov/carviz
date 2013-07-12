@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628110632) do
+ActiveRecord::Schema.define(:version => 20130712081158) do
 
   create_table "cars", :force => true do |t|
     t.string   "marca"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20130628110632) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "user_id"
+    t.string   "carphoto"
   end
 
   create_table "profiles", :force => true do |t|
@@ -47,8 +48,8 @@ ActiveRecord::Schema.define(:version => 20130628110632) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                          :null => false
-    t.datetime "updated_at",                                          :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
     t.string   "name"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
