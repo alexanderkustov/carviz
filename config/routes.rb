@@ -1,4 +1,8 @@
 Carvizy::Application.routes.draw do
+  mount Messaging::Engine => "/messaging"
+
+  devise_for :messaging_users
+
 #com parte facebook
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

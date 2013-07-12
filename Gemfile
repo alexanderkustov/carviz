@@ -10,13 +10,18 @@ group :assets do
   gem "mini_magick"
   gem "carrierwave"
 end
-gem 'jquery-rails'
+
+gem 'jquery-rails', '~> 2.3.0'
+gem 'jquery-ui-rails'
 gem 'devise'
 gem 'devise_invitable'
 gem 'figaro'
 gem 'libv8'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'messaging', git: 'git://github.com/frodefi/rails-messaging.git'
+gem 'mailboxer', git: 'git://github.com/ging/mailboxer.git'
+
 group :assets do
   gem 'therubyracer', :platform=>:ruby, :require=>"v8"
 end
