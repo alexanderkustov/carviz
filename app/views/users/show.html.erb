@@ -11,7 +11,7 @@
 
 <div class="span8 offset1">
 	<% @user.cars.each do |c| %>
-	<img src="<%= c.carphoto %>" class="img-polaroid" width="600px;" />
+	<a href=cars/<%= c.id %>><img src="<%= c.carphoto %>" class="img-polaroid" width="600px;" /></a>
     <h6><%= c.marca %> -
     <%= c.modelo %> -
     <%= c.variacao %> -

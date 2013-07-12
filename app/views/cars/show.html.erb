@@ -1,9 +1,11 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+<div class="row">
 <div class="span8">
 
-<p id="notice"><%= notice %></p>
-
-<img src="<%= @car.carphoto %>" />
-
+<img src="<%= @car.carphoto %>" class="img-polaroid" />
+</div>
+<div class="span3">
 <p>
 Proprietario:
 <%= @car.user.name %>
@@ -42,4 +44,6 @@ Proprietario:
 
 <%= link_to 'Edit', edit_user_car_path(@car.user, @car) %> |
 <%= link_to 'Back', user_cars_path %>
+</div>
+</div>
 </div>
