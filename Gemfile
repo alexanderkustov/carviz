@@ -19,8 +19,7 @@ gem 'figaro'
 gem 'libv8'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'messaging', git: 'git://github.com/frodefi/rails-messaging.git'
-gem 'mailboxer', git: 'git://github.com/ging/mailboxer.git'
+
 
 group :assets do
   gem 'therubyracer', :platform=>:ruby, :require=>"v8"

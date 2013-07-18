@@ -1,5 +1,12 @@
 <h1>Listing all cars</h1>
 
+<% form_tag all_cars, method => "get" do %>
+<p>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search" %>
+</p>
+<% end %>
+
 <table>
   <tr>
     <th>proprietario</th>
