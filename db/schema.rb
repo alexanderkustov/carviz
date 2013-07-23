@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712091033) do
+ActiveRecord::Schema.define(:version => 20130723125912) do
 
   create_table "cars", :force => true do |t|
     t.string   "marca"
@@ -24,6 +24,21 @@ ActiveRecord::Schema.define(:version => 20130712091033) do
     t.datetime "updated_at",   :null => false
     t.integer  "user_id"
     t.string   "carphoto"
+  end
+
+  create_table "conversations", :force => true do |t|
+    t.string   "subject",    :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.string   "user_from"
+    t.string   "user_to"
+    t.string   "subject"
+    t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "messaging_users", :force => true do |t|
@@ -44,6 +59,26 @@ ActiveRecord::Schema.define(:version => 20130712091033) do
   add_index "messaging_users", ["email"], :name => "index_messaging_users_on_email", :unique => true
   add_index "messaging_users", ["reset_password_token"], :name => "index_messaging_users_on_reset_password_token", :unique => true
 
+  create_table "notifications", :force => true do |t|
+    t.string   "type"
+    t.text     "body"
+    t.string   "subject",              :default => ""
+    t.integer  "sender_id"
+    t.string   "sender_type"
+    t.integer  "conversation_id"
+    t.boolean  "draft",                :default => false
+    t.datetime "updated_at",                              :null => false
+    t.datetime "created_at",                              :null => false
+    t.integer  "notified_object_id"
+    t.string   "notified_object_type"
+    t.string   "notification_code"
+    t.string   "attachment"
+    t.boolean  "global",               :default => false
+    t.datetime "expires"
+  end
+
+  add_index "notifications", ["conversation_id"], :name => "index_notifications_on_conversation_id"
+
   create_table "profiles", :force => true do |t|
     t.integer  "idade"
     t.boolean  "sexo"
@@ -54,6 +89,20 @@ ActiveRecord::Schema.define(:version => 20130712091033) do
     t.integer  "user_id"
     t.string   "avatar"
   end
+
+  create_table "receipts", :force => true do |t|
+    t.integer  "receiver_id"
+    t.string   "receiver_type"
+    t.integer  "notification_id",                                  :null => false
+    t.boolean  "is_read",                       :default => false
+    t.boolean  "trashed",                       :default => false
+    t.boolean  "deleted",                       :default => false
+    t.string   "mailbox_type",    :limit => 25
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+  end
+
+  add_index "receipts", ["notification_id"], :name => "index_receipts_on_notification_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false
