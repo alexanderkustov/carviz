@@ -683,7 +683,7 @@ footer a:hover { color: #aaa; }
   transition-timing-function: ease-out;
 }
 
-.show{
+.showa{
   width: 100%;
   height: 100%;
   float: left;
@@ -705,7 +705,7 @@ footer a:hover { color: #aaa; }
   overflow: hidden;
 }
 
-.show .mask{
+.showa .mask{
   width: 100%;
   height: 100%;
   position: absolute;

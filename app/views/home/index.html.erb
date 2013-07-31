@@ -1,15 +1,19 @@
 <div class="product-showcase">
     <div class="product-showcase-pattern">
         <div class="container" style="height:700px;">
+            
             <div class="row">
                 <div class="span4 product-background">
                    <%= image_tag "carro2.png" %>
                </div>
+
                <div class="span1 offset6 product-background" style="text-align:center;">
                    <a href="<%= users_path %>" style="color:white">LOGIN</a>
                    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
                </div>
+           
            </div>
+           
            <div class="row">
             <div class="span1 product-image">
                 <div class="span12 product-title">
