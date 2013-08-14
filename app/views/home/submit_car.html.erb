@@ -1,0 +1,65 @@
+<div class="product-showcase">
+    <div class="product-showcase-pattern">
+        <div class="container" style="height:200px;">
+            
+            <div class="row">
+                <div class="span4 product-background">
+                   <%= image_tag "carro2.png" %>
+               </div>
+              <div class="span1 offset6 product-background" style="text-align:center; color:white;">
+<% if current_user.nil? %>
+    
+
+                
+                   <a href="<%= users_path %>" style="color:white">LOGIN</a>
+                   <%= link_to "Facebook Login", user_omniauth_authorize_path(:facebook) %>
+               
+               <% else %>
+<a href="<%= users_path %>" style="color:white">Meu Perfil</a>
+           <% end %>
+           </div>
+           </div>
+           
+          
+                </div>
+
+            </div>
+           
+        </div>
+    </div>
+
+</div>
+<!-- Content -->
+<div class="container">
+
+        
+
+    <div class="row">
+        <div class="span12">
+            <!-- about us -->
+            <div class="about-us_2">
+                <h3>Submeter o Seu Carro</h3>
+               <!-- Change the width and height values to suit you best -->
+<div class="typeform-widget" data-url="https://carviz.typeform.com/to/CPRNiO" data-text="Carviz" style="width:100%;height:500px;"></div>
+<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+              
+            </div>
+        </div>
+    </div> <!-- end row -->
+
+    
+            <!-- as seen on 
+            <div class="row">
+            <div class="span12 using-this">
+                <h3>Como Visto Em...</h3>
+                <div class="using-this-container">
+                    <a class="using-this-google" href="#"></a>
+                    <a class="using-this-pinterest" href="#"></a>
+                    <a class="using-this-youtube" href="#"></a>
+                    <a class="using-this-google" href="#"></a>
+                    <a class="using-this-pinterest" href="#"></a>
+                </div>
+            </div>
+        </div> 
+        <!-- end row -->
+    </div> <!-- end container -->

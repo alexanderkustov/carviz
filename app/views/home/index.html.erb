@@ -6,12 +6,18 @@
                 <div class="span4 product-background">
                    <%= image_tag "carro2.png" %>
                </div>
+              <div class="span1 offset6 product-background" style="text-align:center; color:white;">
+<% if current_user.nil? %>
+    
 
-               <div class="span1 offset6 product-background" style="text-align:center;">
+                
                    <a href="<%= users_path %>" style="color:white">LOGIN</a>
-                   <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-               </div>
-           
+                   <%= link_to "Facebook Login", user_omniauth_authorize_path(:facebook) %>
+               
+               <% else %>
+<a href="<%= users_path %>" style="color:white">Meu Perfil</a>
+           <% end %>
+           </div>
            </div>
            
            <div class="row">
@@ -31,7 +37,7 @@
             <div class="row">
                 <div class="span1 product-image">
                     <div class="span11">
-                        <h3><a href="#" style="color:white; padding:5px; border: 3px solid white; border-radius: 5px;"> Liste o Seu Carro > </a></h3>
+                        <h3><a href="<%= submit_car_path %>" style="color:white; padding:5px; border: 3px solid white; border-radius: 5px;"> Liste o Seu Carro > </a></h3>
                     </div>
                 </div>
             </div> 

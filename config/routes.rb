@@ -15,6 +15,7 @@ Carvizy::Application.routes.draw do
   
   match "/all_cars", :to => "cars#all_cars"
   match "/inbox", :to => "messages#inbox"
+  match "/submit_car", :to => "home#submit_car"
 
 
 
